@@ -1,30 +1,32 @@
 # ChatApp-CustomGPT-from-scratch-PretrainedGPT-LoRA-fine-tuning-LangChain
-# 🧠 Custom GPT Chatbot with PDF Question Answering
+# GPT Chatbot with PDF Question Answering
 
-This project presents a fully functional chatbot application built with PyTorch and HuggingFace Transformers. It integrates both a custom GPT model and fine-tuned GPT-2 (Large) models to support natural conversation as well as document-based question answering (QA) from PDF files.
+This project presents a fully functional chatbot application built with PyTorch and HuggingFace Transformers. 
+It integrates both a custom GPT model and pre-trained GPT-2 models to support natural conversation as well as document-based question answering (QA) from PDF files.
 
-## ✨ Features
+## Overview
 
-- ✅ Custom GPT architecture implemented from scratch in PyTorch  
-- ✅ Support for HuggingFace GPT-2 Large and fine-tuned GPT-2 (with LoRA on SQuAD 2.0)  
-- ✅ Integration with LangChain for PDF document ingestion and retrieval  
-- ✅ Context-aware question answering based on the content of uploaded PDFs  
-- ✅ Graphical user interface using **CustomTkinter**  
-- ✅ Adjustable generation parameters (temperature, max length)  
-- ✅ Dynamic prompt length handling to avoid input size issues  
+This project implements a conversational AI system using both custom-built and pre-trained GPT models. It features:
+
+- A custom Transformer-based GPT model trained from scratch on WikiText-103
+- Fine-tuning on SQuAD 2.0 for question answering
+- Integration of HuggingFace's GPT-2 Large with PDF processing via LangChain
+- A GUI application for interactive chatting with model switching capabilities
 
 ---
 
-## 📚 Model Training Pipeline
+##  Technical Stack
+| Attempt | #1    | #2    |
+| :-----: | :---: | :---: |
+| Seconds | 301   | 283   |
 
-### 1. **Pretraining**
-- Dataset: [WikiText-103](https://huggingface.co/datasets/wikitext)
-- Objective: Train a GPT-like language model from scratch using standard causal language modeling.
-
-### 2. **Fine-tuning**
-- Dataset: [SQuAD 2.0](https://rajpurkar.github.io/SQuAD-explorer/)
-- Technique: LoRA (Low-Rank Adaptation) for efficient parameter updates
-- Purpose: Adapt the base model for extractive and generative question answering.
+Component	Technologies Used
+Core Models	PyTorch, Transformers
+Custom GPT	Transformer architecture with 6 layers, 8 heads
+Fine-Tuning	LoRA (Low-Rank Adaptation) for efficient tuning
+PDF Processing	LangChain, PyPDF, ChromaDB
+GUI	CustomTkinter
+Optimization	Gradient Accumulation, OneCycleLR
 
 ---
 
